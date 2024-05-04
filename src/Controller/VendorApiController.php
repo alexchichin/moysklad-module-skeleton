@@ -62,7 +62,7 @@ class VendorApiController extends AbstractController
         ]);
     }
 
-    #[Route('/api/moysklad/vendor/1.0/apps/{appId}/{accountId}', name: 'app_activate', methods: ['GET'])]
+    #[Route('/api/moysklad/vendor/1.0/apps/{appId}/{accountId}', name: 'app_info', methods: ['GET'])]
     public function info(
         string $appId, 
         string $accountId, 
@@ -86,7 +86,7 @@ class VendorApiController extends AbstractController
         ]);
     }
 
-    #[Route('/api/moysklad/vendor/1.0/apps/{appId}/{accountId}', name: 'app_activate', methods: ['DELETE'])]
+    #[Route('/api/moysklad/vendor/1.0/apps/{appId}/{accountId}', name: 'app_deactivate', methods: ['DELETE'])]
     public function disable(
         Request $request, 
         string $appId, 
