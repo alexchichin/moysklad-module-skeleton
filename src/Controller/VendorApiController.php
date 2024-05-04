@@ -41,8 +41,10 @@ class VendorApiController extends AbstractController
         if(!$accountApplication){
             $accountApplication = new AccountApplication;
             $accountApplication
-                ->setAppUid($appId)
-                ->setaccountName($accountId)
+                ->setAppId($appId)
+                ->setAppUid($requestData['appUid'])
+                ->setAccountId($accountId)
+                ->setAccountName($requestData['accountName'])
                 ->setStatus(AccountApplicationStatus::SETTINGS_REQUIRED);
         }else{
             $accountApplication->setStatus(AccountApplicationStatus::ACTIVATED);
